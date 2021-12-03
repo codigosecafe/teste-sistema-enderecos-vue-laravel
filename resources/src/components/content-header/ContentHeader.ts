@@ -1,4 +1,4 @@
-import { defineComponent } from "@vue/runtime-core";
+import { defineComponent, ref } from 'vue'
 export default defineComponent({
     mounted(): void{}
 });
