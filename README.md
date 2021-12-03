@@ -10,7 +10,7 @@ git clone https://github.com/codigosecafe/teste-sistema-enderecos-vue-laravel.gi
 Crie o Arquivo .env
 ```sh
 cd teste-sistema-enderecos-vue-laravel/
-cp .env-doccker .env
+cp .env-docker .env
 ```
 
 Suba os containers do projeto
