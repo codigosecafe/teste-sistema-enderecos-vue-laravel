@@ -5,7 +5,8 @@
  */
  import * as $ from "jquery";
  (<any>window).jQuery = $
- import "bootstrap";
+ //import "bootstrap";
+ import 'jquery-mask-plugin';
 
  import axios from "axios"
 

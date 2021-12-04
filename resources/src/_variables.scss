@@ -1,0 +1,21 @@
+// small screens - phones
+$xs: ( max: 767px );
+// small screens - tablets
+$sm: ( min: 768px );
+// medium screens - desktops,laptops
+$md: ( min: 992px );
+// large screens - desktops,laptops
+$lg: ( min: 1200px );
+// smaller than medium
+$sm_max: ( max: map-get($md, min) - 1 );
+$sm_only: ( min: map-get($sm, min), max: map-get($md, min) - 1);
+$md_only: ( min: map-get($md, min), max: map-get($lg, min) - 1);
+
+
+// THEME COLOR
+$zip-code-color-orange-1: #e67e22;
+$zip-code-color-green-1: #2ecc71;
+$zip-code-color-gray-1: #ecf0f1;
+$zip-code-color-1: #2c3e50;
+$zip-code-color-2: #3498db;
+$zip-code-color-3: #8e44ad;
