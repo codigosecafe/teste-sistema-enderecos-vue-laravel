@@ -63,7 +63,11 @@ class ZipCodeSearchService extends Service
         $sortBy = $filters->get('sort', $this->zipCodeEntities::CITY);
         $limit = $filters->get('limit', 0);
         $query->orderBy($sortBy, $order);
-        return $limit > 0 ? $query->paginate($limit) : $query->get();
+        $result = $limit > 0 ? $query->paginate($limit) : $query->get();
+        if($result->isEmpty()){
+            throw new ZipCodeException(__('zipcode.ENDERECO_NAO_ENCONTRADO_OU_INVALIDO'), JsonResponse::HTTP_BAD_REQUEST);
+        }
+        return $result;
    }
 
    /**

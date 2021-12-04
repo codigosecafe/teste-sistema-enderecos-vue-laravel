@@ -1,10 +1,11 @@
-
 <template>
-    <div class="row animate__animated animate__zoomIn">
-        <div class="col-md-12 mt-3 mb-3">
-            <h1 class="text__color--white text-center">Sistema de consulta de endereços com base no CEP</h1>
-        </div>
+  <div class="row animate__animated animate__zoomIn">
+    <div class="col-md-12 mt-3 mb-3">
+      <h1 class="text__color--white text-center">
+        Sistema de consulta de endereços com base no CEP
+      </h1>
     </div>
+  </div>
   <div class="row animate__animated animate__fadeInUp">
     <div class="col-lg-12 card-margin mt-3">
       <div class="card search-form">
@@ -15,7 +16,12 @@
                 <div class="row no-gutters">
                   <div class="col-lg-3 col-md-3 col-sm-12">
                     <select
-                      class="form-select form-select-lg mb-1 bg--orange text__color--white"
+                      class="
+                        form-select form-select-lg
+                        mb-1
+                        bg--orange
+                        text__color--white
+                      "
                       id="exampleFormControlSelect1"
                       v-model="typeSearch"
                     >
@@ -43,7 +49,11 @@
                     />
                   </div>
                   <div class="col-lg-1 col-md-3 col-sm-12 p-0">
-                    <button class="btn btn-base bg--purple text__color--white" @click="searchDataZipCodeAddress" @keydown.enter="searchDataZipCodeAddress">
+                    <button
+                      class="btn btn-base bg--purple text__color--white"
+                      @click="searchDataZipCodeAddress"
+                      @keydown.enter="searchDataZipCodeAddress"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -69,16 +79,20 @@
       </div>
     </div>
   </div>
-</template>
 
+  <ContentLoad v-if="showLoad"></ContentLoad>
+</template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-
+import ContentLoad from "../content-load/ContentLoad.vue";
 export default defineComponent({
-
+  components: {
+    ContentLoad,
+  },
   data() {
     return {
+      showLoad: false,
       typeSearch: 1,
       searchTerm: "",
       placeholderText: "Digite aqui o CEP a ser pesquisado",
@@ -95,27 +109,32 @@ export default defineComponent({
     },
   },
   methods: {
-     searchDataZipCodeAddress() {
-        if (this.typeSearch === 1) {
-            this.$http.get(`/api/busca-cep/${this.searchTerm}`).then( (response: any) => {
-                this.emitter.emit("showDataAddress", response.data.data)
-            })
-            .catch(function (error: any) {
-                console.log(error);
-            });
-            return 0;
-        }
-        this.$http.get(`/busca-cep?searchTerm=${this.searchTerm}&sort=street&order=asc`).then( (response: any) => {
-                this.emitter.emit("showDataAddress", response.data.data)
-            })
-            .catch(function (error: any) {
-                console.log(error);
-            });
+    searchDataZipCodeAddress(): any {
+      this.showLoad = true;
+      let urlSearch = `/api/busca-cep/${this.searchTerm}`;
+      if (this.typeSearch === '2') {
+        urlSearch = `/api/busca-cep?searchTerm=${this.searchTerm}&sort=street&order=asc`;
+      }
+      this.$http
+        .get(urlSearch)
+        .then((response: any) => {
+          this.emitter.emit("showDataAddress", response.data.data);
+        })
+        .catch((error: any) => {
+          if (error.response) {
+            this.$swal("Erro", error.response.data.message, "error");
+            console.log(error.response.data.message); // => the response payload
+          }
+        })
+        .then(() => {
+          this.showLoad = false;
+        });
+
+      return 0;
     },
   },
   mounted(): void {},
 });
 </script>
-
 
 <style lang="scss" src="./style.scss"></style>
