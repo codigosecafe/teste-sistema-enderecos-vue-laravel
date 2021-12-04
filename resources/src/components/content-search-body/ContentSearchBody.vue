@@ -72,18 +72,7 @@
                                     >
                                         visualizar
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-success me-1"
-                                    >
-                                        Atualizar
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-danger"
-                                    >
-                                        Deletar
-                                    </button>
+
                                 </td>
                             </tr>
                         </tbody>
