@@ -72,7 +72,6 @@
                                     >
                                         visualizar
                                     </button>
-
                                 </td>
                             </tr>
                         </tbody>
