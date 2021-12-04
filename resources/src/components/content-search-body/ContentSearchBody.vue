@@ -80,6 +80,13 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <h6 class="text__color--white text-center">Feito com <i class="fas fa-heart"></i> por Claudio Alexssandro Lino</h6>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">

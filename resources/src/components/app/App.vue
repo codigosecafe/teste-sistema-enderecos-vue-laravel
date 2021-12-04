@@ -2,6 +2,7 @@
   <div class="container">
     <ContentSearch />
     <ContentSearchBody />
+
   </div>
 </template>
 
