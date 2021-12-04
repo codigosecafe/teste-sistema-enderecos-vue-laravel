@@ -150,7 +150,6 @@ export default defineComponent({
                             error.response.data.message,
                             "error"
                         );
-                        console.log(error.response.data.message); // => the response payload
                     }
                 })
                 .then(() => {
