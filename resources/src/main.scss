@@ -1,29 +1,27 @@
 @import "./variables";
 @import "./mixins";
-
-body{
-    background:$zip-code-color-1;
-    margin-top:20px;
+body {
+    background: $zip-code-color-1 !important;
+    margin-top: 20px;
     color: #34495e !important;
 }
 
-.bg{
-    &--purple{
+.bg {
+    &--purple {
         background-color: $zip-code-color-3 !important;
     }
-    &--orange{
+    &--orange {
         background-color: $zip-code-color-orange-1 !important;
     }
 }
 
-.text{
-    &__color{
-        &--white{
+.text {
+    &__color {
+        &--white {
             color: $zip-code-color-gray-1 !important;
         }
-        &--green{
+        &--green {
             color: $zip-code-color-green-1 !important;
         }
-
     }
 }

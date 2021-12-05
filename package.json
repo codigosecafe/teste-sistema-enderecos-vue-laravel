@@ -10,7 +10,6 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.4",
         "@popperjs/core": "^2.11.0",
         "@types/jquery": "^3.5.9",
         "@types/lodash": "^4.14.177",

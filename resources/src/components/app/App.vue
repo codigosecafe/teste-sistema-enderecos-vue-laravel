@@ -7,7 +7,9 @@
 </template>
 
 <script lang="ts">
+
 import { defineComponent, ref } from "vue";
+
 import ContentSearchBody from "../content-search-body/ContentSearchBody.vue";
 import ContentSearch from "../content-search/ContentSearch.vue";
 
