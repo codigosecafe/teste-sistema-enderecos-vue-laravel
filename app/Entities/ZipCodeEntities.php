@@ -64,4 +64,13 @@ class ZipCodeEntities extends Entity
 		self::IBGE,
 		self::DDD
 	];
+     /**
+     * ACCESSORS
+     */
+    public function getStreetMapAttribute()
+    {
+        $estado = $this->sped_estado;
+        return 'https://www.google.com.br/maps/place/'.str_replace(' ', '+', $this->{self::STREET}).'+-+'.str_replace(' ', '+', $this->{self::NEIGHBORHOOD}).',+'.str_replace(' ', '+', $this->{self::CITY}).'+-+'.str_replace(' ', '+', $this->{self::STATE});
+    }
+
 }

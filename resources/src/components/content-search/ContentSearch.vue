@@ -1,4 +1,5 @@
 <template>
+     <content-load v-if="showLoad"></content-load>
     <div class="row animate__animated animate__zoomIn">
         <div class="col-md-12 mt-3 mb-3">
             <h1 class="text__color--white text-center">
@@ -58,6 +59,7 @@
                                         class="col-lg-1 col-md-3 col-sm-12 p-0"
                                     >
                                         <button
+                                        type="button"
                                             class="
                                                 btn btn-base
                                                 bg--purple
@@ -107,7 +109,7 @@
             <h6 class="text__color--white text-center">Feito com <i class="fas fa-heart"></i> por Claudio Alexssandro Lino</h6>
         </div>
     </div>
-    <ContentLoad v-if="showLoad"></ContentLoad>
+
 </template>
 
 <script lang="ts">
@@ -136,7 +138,8 @@ export default defineComponent({
         },
     },
     methods: {
-        searchDataZipCodeAddress(): any {
+        searchDataZipCodeAddress(): void {
+
             this.showLoad = true;
             let urlSearch = `/api/busca-cep/${this.searchTerm}`;
             if (this.typeSearch === "2") {
@@ -159,8 +162,6 @@ export default defineComponent({
                 .then(() => {
                     this.showLoad = false;
                 });
-
-            return 0;
         },
     },
     mounted(): void {},

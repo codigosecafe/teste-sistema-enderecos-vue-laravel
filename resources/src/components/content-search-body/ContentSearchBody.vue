@@ -104,7 +104,7 @@ export default defineComponent({
             let body = "";
             let whithModal = 600;
             if (_.isArray(address)) {
-                whithModal = 920;
+                whithModal = 960;
                 title = `<strong>Endereços correspondentes</strong>`;
                 body += `<table class="table">
                     <thead>
@@ -114,6 +114,7 @@ export default defineComponent({
                         <th scope="col">Logradouro</th>
                         <th scope="col">Cidade</th>
                         <th scope="col">Estado</th>
+                        <th scope="col">Google Maps</th>
                       </tr>
                     </thead>
                     <tbody>`;
@@ -125,6 +126,7 @@ export default defineComponent({
                     <td>${value.logradouro}</td>
                     <td>${value.cidade}</td>
                     <td>${value.estado}</td>
+                    <td><a href="${value.google_map}" target="_blank">Visualizar</a></td>
                   </tr>`;
                 });
 
@@ -136,7 +138,7 @@ export default defineComponent({
                       <span class="text-muted time">${address.bairro}</span>-
                       <span class="text-muted time">${address.cidade}</span>-
                       <span class="text-muted time">${address.estado}</span>
-                    </p>`;
+                    </p><br/><p><a href="${address.google_map}" target="_blank">Visualizar no Google Maps</a></p>`;
             }
 
             return {

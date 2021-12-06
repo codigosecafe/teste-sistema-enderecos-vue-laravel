@@ -6,8 +6,7 @@ import VueMask from 'vue-jquery-mask';
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
+
 
 import mitt from 'mitt';
 
