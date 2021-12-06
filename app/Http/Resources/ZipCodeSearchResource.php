@@ -24,6 +24,11 @@ class ZipCodeSearchResource extends Resource
                 'timestamp'      => $resource->created_at->format('Y-m-d H:i:s'),
                 'dia_formatado'  => $resource->created_at->format('d/m/Y'),
                 'hora_formatado' => $resource->created_at->format('H:i:s')
+            ],
+            'atualizado_em' => [
+                'timestamp'      => $resource->updated_at->format('Y-m-d H:i:s'),
+                'dia_formatado'  => $resource->updated_at->format('d/m/Y'),
+                'hora_formatado' => $resource->updated_at->format('H:i:s')
             ]
         ];
     }
