@@ -46,22 +46,15 @@ class ZipCodeSearchService extends Service
    public function index(Collection $filters = null){
         if (!$filters) {$filters = collect();}
 
-        $query = $this->zipCodeEntities::with([]);
-        if ($search = Str::upper($filters->get('searchTerm'))) {
-            $query->where(function($query) use ($search){
-                $query->where($this->zipCodeEntities::ZIP_CODE,         'like', "%$search%");
-                $query->orWhere($this->zipCodeEntities::STREET,         'like', "%$search%");
-                $query->orWhere($this->zipCodeEntities::COMPLEMENT,     'like', "%$search%");
-                $query->orWhere($this->zipCodeEntities::NEIGHBORHOOD,   'like', "%$search%");
-                $query->orWhere($this->zipCodeEntities::CITY,           'like', "%$search%");
-                $query->orWhere($this->zipCodeEntities::STATE,          'like', "%$search%");
-                $query->orWhere($this->zipCodeEntities::IBGE,           'like', "%".$this->zipCodeEntities->removeMask($search)."%");
-                $query->orWhere($this->zipCodeEntities::DDD,            'like', "%".$this->zipCodeEntities->removeMask($search)."%");
-            });
-        }
         $order = $filters->get('order', 'asc');
         $sortBy = $filters->get('sort', $this->zipCodeEntities::CITY);
         $limit = $filters->get('limit', 0);
+
+        $query = $this->zipCodeEntities::with([]);
+        if ($search = Str::upper($filters->get('searchTerm'))) {
+                $query->whereFuzzy($this->zipCodeEntities::STREET,       $search);
+        }
+
         $query->orderBy($sortBy, $order);
         $result = $limit > 0 ? $query->paginate($limit) : $query->get();
         if($result->isEmpty()){

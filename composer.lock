@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e3e6faf45075826c73627cdab4f1dfe",
+    "content-hash": "c2db5c88bcb7a133ada5b8f52afaa229",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1600,6 +1600,59 @@
                 }
             ],
             "time": "2021-11-21T11:48:40+00:00"
+        },
+        {
+            "name": "mattkingshott/quest",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mattkingshott/quest.git",
+                "reference": "8c206535169f43913ca0c3d5bd695c0982a82a69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mattkingshott/quest/zipball/8c206535169f43913ca0c3d5bd695c0982a82a69",
+                "reference": "8c206535169f43913ca0c3d5bd695c0982a82a69",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Quest\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Quest\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A package that provides pseudo fuzzy-searching to Laravel database queries.",
+            "homepage": "https://github.com/mattkingshott/quest",
+            "keywords": [
+                "fuzzy",
+                "laravel",
+                "php",
+                "quest",
+                "search"
+            ],
+            "support": {
+                "issues": "https://github.com/mattkingshott/quest/issues",
+                "source": "https://github.com/mattkingshott/quest/tree/v2.0.0"
+            },
+            "time": "2021-11-22T15:43:52+00:00"
         },
         {
             "name": "monolog/monolog",
