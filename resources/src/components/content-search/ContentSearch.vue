@@ -11,7 +11,7 @@
         <div class="col-lg-12 card-margin mt-3">
             <div class="card search-form">
                 <div class="card-body p-0">
-                    <form id="search-form">
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="row no-gutters">
@@ -66,9 +66,7 @@
                                                 text__color--white
                                             "
                                             @click="searchDataZipCodeAddress"
-                                            @keydown.enter="
-                                                searchDataZipCodeAddress
-                                            "
+                                            @keydown.enter="searchDataZipCodeAddress"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+
                 </div>
             </div>
         </div>
@@ -164,7 +162,9 @@ export default defineComponent({
                 });
         },
     },
-    mounted(): void {},
+    mounted(): void {
+
+    },
 });
 </script>
 
