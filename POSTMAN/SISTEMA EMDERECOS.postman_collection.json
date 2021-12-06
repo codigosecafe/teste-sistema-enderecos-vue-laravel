@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "b60acdb2-4999-4742-b67c-c3992ec80524",
+		"name": "SISTEMA EMDERECOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BUSCA/CADASTRA EMDEREÇO COM BASE NO CEP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/busca-cep/83704325",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"busca-cep",
+						"83704325"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CADASTRA EMDEREÇO COM BASE NO CEP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"zip_code\": \"83704325\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}/busca-cep",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"busca-cep"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ATUALIZA EMDEREÇO COM BASE NO CEP",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}/busca-cep/83704325",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"busca-cep",
+						"83704325"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETA EMDEREÇO COM BASE NO CEP",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}/busca-cep/83704325",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"busca-cep",
+						"83704325"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTA EMDEREÇO COM BASE NO TERMO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/busca-cep?searchTerm=Curitiba&sort=street&order=asc",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"busca-cep"
+					],
+					"query": [
+						{
+							"key": "searchTerm",
+							"value": "Curitiba",
+							"description": "não obrigatorio"
+						},
+						{
+							"key": "sort",
+							"value": "street",
+							"description": "id,zip_code,street,complement,neighborhood,city,state,ibge,ddd | não obrigatorio"
+						},
+						{
+							"key": "limit",
+							"value": "15",
+							"description": "não obrigatorio",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc",
+							"description": " 'asc' ou 'desc' | não obrigatorio"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
