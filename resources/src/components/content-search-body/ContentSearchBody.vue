@@ -104,7 +104,7 @@ export default defineComponent({
             let body = "";
             let whithModal = 600;
             if (_.isArray(address)) {
-                whithModal = 960;
+                whithModal = 980;
                 title = `<strong>Endereços correspondentes</strong>`;
                 body += `<table class="table">
                     <thead>
