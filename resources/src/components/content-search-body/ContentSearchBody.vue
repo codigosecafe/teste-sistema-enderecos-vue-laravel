@@ -2,7 +2,7 @@
     <ContentLoad v-if="addressList.length < 1"></ContentLoad>
 
     <div
-        class="card mt-5 animate__animated animate__fadeInUp"
+        class="card mt-3 animate__animated animate__fadeInUp"
         v-if="addressList.length > 0"
     >
         <div class="card-body">
@@ -82,11 +82,7 @@
     </div>
 
 
-    <div class="row">
-        <div class="col-md-12 mt-5">
-            <h6 class="text__color--white text-center">Feito com <i class="fas fa-heart"></i> por Claudio Alexssandro Lino</h6>
-        </div>
-    </div>
+
 </template>
 
 <script lang="ts">
