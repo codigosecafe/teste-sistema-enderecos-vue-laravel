@@ -162,9 +162,7 @@ export default defineComponent({
                 });
         },
     },
-    mounted(): void {
-
-    },
+    mounted(): void {},
 });
 </script>
 
