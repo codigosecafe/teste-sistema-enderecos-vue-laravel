@@ -27,10 +27,10 @@
                         </thead>
                         <tbody>
                             <tr
-                                v-for="address in addressList"
+                                v-for="(address, index) in addressList"
                                 :key="address.id"
                             >
-                                <td>{{ address.id }}</td>
+                                <td>{{((index + addressList.length) - addressList.length) + 1}}</td>
                                 <td>
                                     <div class="widget-26-job-title">
                                         <span>{{ address.logradouro }}</span>
